@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Transform XY to LatLng">
+    <meta name="keywords" content="Map,Geography,Geospatial,Projection">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />  
+    <meta http-equiv="Content-Language" content="en" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Convertor DAT to KML</title>
+    <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+    <h3>🔢 Custom Input for itinerary</h3>
+    <dl>
+        <dt>
+            <h4><p>Select Input <abbr title='Coordinate Reference System'>CRS</abbr>&nbsp;<span style='font-family:cambria'>🌐ᵉᵖˢᵍ&nbsp;</span><select id='xyProj4List0' class='minimal'></select></p></h4>
+            <p class='info'>ℹ The default CRS is 26191  <em>EPSG:26191/Merchich(Nord Maroc).</em></p>
+            <p><strong>X:</strong>&nbsp;<input id='xVal' type='number' placeholder="Value of X" />&nbsp;<strong>Y:</strong>&nbsp;<input id='yVal' type='number' placeholder="Value of Y" />&nbsp;<br><p class='info'>ℹ Itinerary will be shown in <em>Google Maps.</em></p><button id='transformProj' class='btn btn-outline-dark'>📍 GO TO </button></p>
+        </dt>
+        <dd>
+            <div id='output'></div>
+        </dd>
+        <!-- <p class='info'>ℹ Output values are rendered in <em>EPSG:4326/WGS84</em> spatial projection by default.</p> -->
+    </dl>
+
+    <h3>📤 Upload DAT File to Convert</h3>
+    <dl>
+        <dt>
+            <!-- <p><strong>Step 1) </strong>Specify fieldnames for&nbsp;&nbsp;<strong>X:</strong>&nbsp;<input id='xFieldName' type='text' value='x' />&nbsp;<strong>Y:</strong>&nbsp;<input id='yFieldName' type='text' value='y' /></p> -->
+            <p class='info'>ℹ Convertor <em>DAT File (Cadastre Structure)</em> to <em>KML File.</em></p>
+            <p><strong>Step 1) </strong>&nbsp;&nbsp;<button id='uploadCSVFileBtn' class='btn btn-outline-dark'>📂&nbsp;&nbsp;Select File...<input id='uploadCSVFile' type='file' /></button>&thinsp;&thinsp;
+                <!-- <button id='saveTransformedProj' class='btn btn-outline-dark' disabled>💾 Save Output</button></p> -->
+            <p></p>
+            <p class='info'><strong>Step 2) </strong>The Output file will be downloaded automatically under name <em>DAT_TO_KML</em>.</p>
+
+            <div id='outputPreviewTable' class="table-responsive"></div>
+        </dt>
+    </dl>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script src='proj4.js'></script>
+    <script src='proj4_list.js'></script>
+    <script src='json2csv.js'></script>
+    <script src='main.js'></script>
+</body>
+</html>
